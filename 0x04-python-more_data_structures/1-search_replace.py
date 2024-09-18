@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    if not matrix:
-        return []
-
-    # Create a new matrix with the same dimensions as the input matrix
-    new_matrix = []
-    for row in matrix:
-        new_row = []
-        for value in row:
-            new_row.append(value ** 2)
-        new_matrix.append(new_row)
-
-    return new_matrix
+def search_replace(my_list, search, replace):
+    # Create a new list to store the results
+    new_list = []
+    
+    # Iterate through each element in the original list
+    for item in my_list:
+        # If the item matches the search element, append the replace element
+        # Otherwise, append the original item
+        if item == search:
+            new_list.append(replace)
+        else:
+            new_list.append(item)
+    
+    # Return the new list
+    return new_list
