@@ -1,0 +1,86 @@
+===========================
+How to Use 5-text_indentation.py
+===========================
+
+This module defines a text-formatting function ``text_indentation(text)``.
+
+Usage
+=====
+
+Text is printed with two new lines after each '.', '?' and ':'.
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello. World? How are you: Fine.")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    Fine.
+    <BLANKLINE>
+
+No spaces are printed at the beginning or end of lines:
+
+::
+
+    >>> text_indentation("   Hi there.   ")
+    Hi there.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("No punctuation")
+    No punctuation
+
+Multiple punctuation marks:
+
+::
+
+    >>> text_indentation("Hello... World")
+    Hello.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    World
+
+Invalid Input
+============
+
+The ``text`` parameter must be a string. Otherwise, a TypeError is raised.
+
+::
+
+    >>> text_indentation(7)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation({"hello": "world"})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Empty string:
+
+::
+
+    >>> text_indentation("")
+
+Missing argument:
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
